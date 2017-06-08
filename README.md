@@ -11,6 +11,8 @@ devtools::install_github("associatedpress/aptheme")
 Usage:
 
 ``` r
+library(aptheme)
+
 # ggplot2
 plot + theme_ap()
 ```
