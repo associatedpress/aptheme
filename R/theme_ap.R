@@ -2,6 +2,7 @@
 #'
 #' This function is a theme function for use with ggplot2.
 #' It tries to have a very tight composition, suitable for email or chat message
+#' @include aptheme-package.R
 
 # primitives
 # element_text:
