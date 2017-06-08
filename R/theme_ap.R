@@ -27,7 +27,7 @@
 #   linetype = type of border line  1
 
 
-
+#' @export
 theme_ap <- function() {
   theme(
     #  axis.line = element_blank(),
