@@ -4,7 +4,7 @@
 \alias{theme_ap}
 \title{ggplot AP theme}
 \usage{
-theme_ap()
+theme_ap(size = 12, family = "GoodComp-CondBook")
 }
 \description{
 This function is a theme function for use with ggplot2.
