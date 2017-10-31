@@ -12,3 +12,5 @@ RoxygenNote: 6.0.1.9000
 Collate: 
     'aptheme-package.R'
     'theme_ap.R'
+Imports:
+  ggplot2
