@@ -19,18 +19,21 @@ data <- rbind(uk, us)[, c(1, 3, 2)]
 
 # Together ----------------------------------------------------------------
 
-# Q: Start at zero?
-# Q: Colors? (Consult Nathan's guide)
-
 # Code style:
 # Initial invocation
 p <- ggplot(data) +
   # Plot objects
   geom_line(aes(x = Date, y = Deaths, color = Country)) +
   # Labels and legend
-  labs(title = "US & UK accident deaths") +
+  labs(title = "US & UK accident deaths",
+       subtitle = "Many more deaths in the US than in the UK",
+       caption = "Data from base R packages",
+       x = "Date",
+       y = "Driving deaths",
+       color = "Country") +
   theme_ap()
 p
 # Faceted -----------------------------------------------------------------
 
 # p + facet_wrap(~Country, scales = 'free')
+rm(uk)
