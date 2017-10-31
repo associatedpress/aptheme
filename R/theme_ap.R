@@ -2,9 +2,9 @@
 #'
 #' This function is a theme function for use with ggplot2.
 #' It tries to have a very tight composition, suitable for email or chat message
-#' @include aptheme-package.R
 #'
 #' http://ggplot2.tidyverse.org/reference/theme.html
+#' @import ggplot2
 
 # Notes on primitives:
 # element_text:
@@ -51,17 +51,17 @@ theme_ap <- function(size = 12, family = "GoodComp-CondBook") {
 #    axis.ticks = element_blank(),
 #    axis.line = element_blank(),
 #    panel.grid = element_blank(),
-    panel.grid.major = element_line(color='#E7E2D8'),
-    panel.grid.minor = element_line(color='#B6B6AB', linetype=1),
+    panel.grid.major = element_line(color = '#E7E2D8', linetype = 'dotted'),
+    panel.grid.minor = element_line(color = '#B6B6AB', linetype = 'dotted'),
 
     # Rect elements
 #    rect = element_blank(),
 #    legend.key = element_blank(),
 #    legend.background = element_blank(),
 #    legend.box.background = element_blank(),
-#    panel.background = element_blank(), # Drawn underneath the plot
+    panel.background = element_blank(), # Drawn underneath the plot
 #    panel.border = element_blank(), # Drawn on top of plot, covering tick marks and grid lines (fill = NA)
-#    plot.background = element_blank(),
+    plot.background = element_blank(),
 #    strip.background = element_blank(),
 
     # Other
@@ -72,7 +72,7 @@ theme_ap <- function(size = 12, family = "GoodComp-CondBook") {
 #    legend.key.size = element_blank(),
     legend.text.align = 0, # 0: left, 1: right
     legend.title.align = 0,
-    legend.position = c(1, 1), # none, left, right, bottom, top, or two-element numeric vector
+    legend.position = 'none', # none, left, right, bottom, top, or two-element numeric vector
     legend.direction = "vertical", # horizontal, vertical
     legend.justification = "center", # center or two-element numeric vector
     legend.box = "horizontal", # horizontal, vertical
@@ -88,3 +88,7 @@ theme_ap <- function(size = 12, family = "GoodComp-CondBook") {
 
 
 # TODO: Define custom color scales (discrete, continuous) for use with AP
+#' @export
+scale_colour_discrete <- function(...) {
+  scale_color_manual(..., values = c("#146994", "#669900", "#D19600", "#664675", "#C83728"))
+}

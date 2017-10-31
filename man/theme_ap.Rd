@@ -10,3 +10,6 @@ theme_ap(size = 12, family = "GoodComp-CondBook")
 This function is a theme function for use with ggplot2.
 It tries to have a very tight composition, suitable for email or chat message
 }
+\details{
+http://ggplot2.tidyverse.org/reference/theme.html
+}
