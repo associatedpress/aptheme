@@ -6,7 +6,7 @@
 #'
 #' http://ggplot2.tidyverse.org/reference/theme.html
 
-# primitives
+# Notes on primitives:
 # element_text:
 #   family = font family
 #   face = font face
@@ -36,14 +36,14 @@ theme_ap <- function(size = 12, family = "GoodComp-CondBook") {
     text = element_text(size, family = family),
     title = element_text(size = size + 4),
 #    axis.text = element_blank(),
-#    axis.title = element_blank(),
+    axis.title = element_text(size = size),
     # Question: x and y direction style difference? Should there be one? Maybe only for certain graphs (i.e. bar graphs)?
 #    legend.text = element_blank(),
 #    legend.title = element_blank(),
     # Question: Plot title, axis title, legend title- all same, or different?
-#    plot.caption = element_blank(),
+    plot.caption = element_text(size = size - 2),
 #    plot.title = element_blank(),
-#    plot.subtitle = element_blank(),
+    plot.subtitle = element_text(size = size),
 #    strip.text = element_blank(),
 
     # Line elements
@@ -72,7 +72,7 @@ theme_ap <- function(size = 12, family = "GoodComp-CondBook") {
 #    legend.key.size = element_blank(),
     legend.text.align = 0, # 0: left, 1: right
     legend.title.align = 0,
-    legend.position = "right", # none, left, right, bottom, top, or two-element numeric vector
+    legend.position = c(1, 1), # none, left, right, bottom, top, or two-element numeric vector
     legend.direction = "vertical", # horizontal, vertical
     legend.justification = "center", # center or two-element numeric vector
     legend.box = "horizontal", # horizontal, vertical
