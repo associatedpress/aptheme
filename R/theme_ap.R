@@ -90,5 +90,9 @@ theme_ap <- function(size = 12, family = "GoodComp-CondBook") {
 # TODO: Define custom color scales (discrete, continuous) for use with AP
 #' @export
 scale_colour_discrete <- function(...) {
-  scale_color_manual(..., values = c("#146994", "#669900", "#D19600", "#664675", "#C83728"))
+  scale_color_manual(..., values = c(
+    "#146994", "#669900", "#D19600", "#664675", "#C83728", # Medium generation
+    "#294251", "#4B6E38", "#BF6B28", "#382C4B", "#831618", # Heavy generation
+    "#72A5BE", "#AFC8A0", "#E6B975", "#B8B5C8", "#EDB1A5" # Light generation
+    ))
 }
