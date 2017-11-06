@@ -67,18 +67,18 @@ theme_ap <- function(size = 12, family = "GoodComp-CondBook") {
     # Other
     axis.ticks.length = unit(-2, "pt"),
 
-    legend.margin = margin(-15, 0, -15, 0, "pt"),
+#    legend.margin = margin(-15, 0, -15, 0, "pt"),
 #    legend.spacing = element_blank(),
 #    legend.key.size = element_blank(),
-    legend.text.align = 0, # 0: left, 1: right
-    legend.title.align = 0,
+#    legend.text.align = 0, # 0: left, 1: right
+#    legend.title.align = 0,
     legend.position = 'none', # none, left, right, bottom, top, or two-element numeric vector
-    legend.direction = "vertical", # horizontal, vertical
-    legend.justification = "center", # center or two-element numeric vector
-    legend.box = "horizontal", # horizontal, vertical
-    legend.box.just = "left", # top, bottom, left, right
-    legend.box.margin = margin(0, 0, 0, 0, "pt"), # specified
-    legend.box.spacing = unit(0, "pt"),
+#    legend.direction = "vertical", # horizontal, vertical
+#    legend.justification = "center", # center or two-element numeric vector
+#    legend.box = "horizontal", # horizontal, vertical
+#    legend.box.just = "left", # top, bottom, left, right
+#    legend.box.margin = margin(0, 0, 0, 0, "pt"), # specified
+#    legend.box.spacing = unit(0, "pt"),
 
     panel.spacing = unit(0, "pt"),
     plot.margin = margin(5, 0, 0, 0, "pt"),
@@ -95,4 +95,13 @@ scale_colour_discrete <- function(...) {
     "#294251", "#4B6E38", "#BF6B28", "#382C4B", "#831618", # Heavy generation
     "#72A5BE", "#AFC8A0", "#E6B975", "#B8B5C8", "#EDB1A5" # Light generation
     ))
+}
+
+#' @export
+scale_fill_discrete <- function(...) {
+  scale_fill_manual(..., values = c(
+    "#146994", "#669900", "#D19600", "#664675", "#C83728", # Medium generation
+    "#294251", "#4B6E38", "#BF6B28", "#382C4B", "#831618", # Heavy generation
+    "#72A5BE", "#AFC8A0", "#E6B975", "#B8B5C8", "#EDB1A5" # Light generation
+  ))
 }
