@@ -35,7 +35,7 @@ theme_ap <- function(size = 12, family = "GoodComp-CondBook") {
     # Text elements
     text = element_text(size, family = family),
     title = element_text(size = size + 4),
-#    axis.text = element_blank(),
+    axis.text = element_text(size = size - 4),
     axis.title = element_text(size = size),
     # Question: x and y direction style difference? Should there be one? Maybe only for certain graphs (i.e. bar graphs)?
 #    legend.text = element_blank(),
@@ -51,8 +51,8 @@ theme_ap <- function(size = 12, family = "GoodComp-CondBook") {
 #    axis.ticks = element_blank(),
 #    axis.line = element_blank(),
 #    panel.grid = element_blank(),
-    panel.grid.major = element_line(color = '#E7E2D8', linetype = 'dotted'),
-    panel.grid.minor = element_line(color = '#B6B6AB', linetype = 'dotted'),
+    panel.grid.major = element_line(color = '#CCCCCC', linetype = 'dotted'),
+    panel.grid.minor = element_blank(),
 
     # Rect elements
 #    rect = element_blank(),
@@ -65,7 +65,7 @@ theme_ap <- function(size = 12, family = "GoodComp-CondBook") {
 #    strip.background = element_blank(),
 
     # Other
-    axis.ticks.length = unit(-2, "pt"),
+    axis.ticks.length = unit(0, "pt"),
 
 #    legend.margin = margin(-15, 0, -15, 0, "pt"),
 #    legend.spacing = element_blank(),
