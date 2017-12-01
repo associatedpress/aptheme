@@ -174,7 +174,8 @@ scale_color_ap <- function(..., palette = "default") {
           "greens",
           "oranges",
           "purples",
-          "reds"),
+          "reds",
+          "neutrals"),
         ap.pal)))
   } else {
     scale_color_manual(..., values = ap.pal(palette))
@@ -192,7 +193,8 @@ scale_fill_ap <- function(..., palette = "default") {
           "greens",
           "oranges",
           "purples",
-          "reds"),
+          "reds",
+          "neutrals"),
         ap.pal)))
   } else {
     scale_fill_manual(..., values = ap.pal(palette))
