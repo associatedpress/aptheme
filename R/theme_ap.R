@@ -37,10 +37,8 @@ theme_ap <- function(size = 12, family = "GoodComp-CondBook") {
     title = element_text(size = size + 4),
     axis.text = element_text(size = size - 4),
     axis.title = element_text(size = size),
-    # Question: x and y direction style difference? Should there be one? Maybe only for certain graphs (i.e. bar graphs)?
 #    legend.text = element_blank(),
 #    legend.title = element_blank(),
-    # Question: Plot title, axis title, legend title- all same, or different?
     plot.caption = element_text(size = size - 2),
 #    plot.title = element_blank(),
     plot.subtitle = element_text(size = size),
@@ -87,21 +85,116 @@ theme_ap <- function(size = 12, family = "GoodComp-CondBook") {
   )}
 
 
-# TODO: Define custom color scales (discrete, continuous) for use with AP
-#' @export
-scale_colour_discrete <- function(...) {
-  scale_color_manual(..., values = c(
-    "#146994", "#669900", "#D19600", "#664675", "#C83728", # Medium generation
-    "#294251", "#4B6E38", "#BF6B28", "#382C4B", "#831618", # Heavy generation
-    "#72A5BE", "#AFC8A0", "#E6B975", "#B8B5C8", "#EDB1A5" # Light generation
-    ))
+# Color data object
+# This contains the color definitions specified in the style guide
+ap.pal <- function(name) {
+  switch(
+    name,
+    neutrals = c(
+      "#FFFFFF", # White
+      "#E7E2D8", # Light Gray
+      "#B1AAA8", # Medium Gray
+      "#8F8F8F", # Deep Gray
+      "#5D5A58"  # Heavy Gray
+    ),
+    primary = c(
+      "#146994", # Medium Blue
+      "#669900", # Medium Green
+      "#D19600", # Medium Orange
+      "#674875", # Medium Purple
+      "#C83728"  # Medium Red
+    ),
+    secondary = c(
+      "#003753", # Heavy Blue
+      "#36572C", # Heavy Green
+      "#B55927", # Heavy Orange
+      "#382C4B", # Heavy Purple
+      "#831618", # Heavy Red
+      "#B0C8D2", # Light Blue
+      "#AFC8A0", # Light Green
+      "#EABF88", # Light Orange
+      "#B8B5C8", # Light Purple
+      "#EDB1A6"  # Light Red
+    ),
+    blues = c(
+      "#B0C8D2",
+      "#6B91AF",
+      "#146994",
+      "#055072",
+      "#003753"
+    ),
+    greens = c(
+      "#AFC8A0",
+      "#89AE6C",
+      "#669900",
+      "#4E7738",
+      "#36572C"
+    ),
+    oranges = c(
+      "#EABF88",
+      "#DCAA59",
+      "#CF962A",
+      "#C17729",
+      "#B55927"
+    ),
+    purples = c(
+      "#B8B5C8",
+      "#8A7798",
+      "#674875",
+      "#4F3A60",
+      "#382C4B"
+    ),
+    reds = c(
+      "#EDB1A6",
+      "#D8755E",
+      "#C83728",
+      "#A52722",
+      "#831618"
+    ),
+    election = c(
+      "#C43D49", # GOP Red
+      "#DA968E", # GOP Leading
+      "#5186B4", # Dem Blue
+      "#A2B7D3", # Dem Leading
+      "#CCB43D", # Other Yellow
+      "#EDDB95", # Other Leading
+      "#A751B4"  # Runoff
+    )
+  )
 }
 
 #' @export
-scale_fill_discrete <- function(...) {
-  scale_fill_manual(..., values = c(
-    "#146994", "#669900", "#D19600", "#664675", "#C83728", # Medium generation
-    "#294251", "#4B6E38", "#BF6B28", "#382C4B", "#831618", # Heavy generation
-    "#72A5BE", "#AFC8A0", "#E6B975", "#B8B5C8", "#EDB1A5" # Light generation
-  ))
+scale_color_ap <- function(..., palette = "default") {
+  if (palette == "default") {
+    scale_color_manual(..., values = unlist(
+      lapply(
+        c("primary",
+          "secondary",
+          "blues",
+          "greens",
+          "oranges",
+          "purples",
+          "reds"),
+        ap.pal)))
+  } else {
+    scale_color_manual(..., values = ap.pal(palette))
+  }
+}
+
+#' @export
+scale_fill_ap <- function(..., palette = "default") {
+  if (palette == "default") {
+    scale_fill_manual(..., values = unlist(
+      lapply(
+        c("primary",
+          "secondary",
+          "blues",
+          "greens",
+          "oranges",
+          "purples",
+          "reds"),
+        ap.pal)))
+  } else {
+    scale_fill_manual(..., values = ap.pal(palette))
+  }
 }
