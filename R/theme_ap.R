@@ -87,80 +87,85 @@ theme_ap <- function(size = 12, family = "GoodComp-CondBook") {
 
 # Color data object
 # This contains the color definitions specified in the style guide
-ap.pal <- function(name) {
-  switch(
-    name,
-    neutrals = c(
-      "#FFFFFF", # White
-      "#E7E2D8", # Light Gray
-      "#B1AAA8", # Medium Gray
-      "#8F8F8F", # Deep Gray
-      "#5D5A58"  # Heavy Gray
-    ),
-    primary = c(
-      "#146994", # Medium Blue
-      "#669900", # Medium Green
-      "#D19600", # Medium Orange
-      "#674875", # Medium Purple
-      "#C83728"  # Medium Red
-    ),
-    secondary = c(
-      "#003753", # Heavy Blue
-      "#36572C", # Heavy Green
-      "#B55927", # Heavy Orange
-      "#382C4B", # Heavy Purple
-      "#831618", # Heavy Red
-      "#B0C8D2", # Light Blue
-      "#AFC8A0", # Light Green
-      "#EABF88", # Light Orange
-      "#B8B5C8", # Light Purple
-      "#EDB1A6"  # Light Red
-    ),
-    blues = c(
-      "#B0C8D2",
-      "#6B91AF",
-      "#146994",
-      "#055072",
-      "#003753"
-    ),
-    greens = c(
-      "#AFC8A0",
-      "#89AE6C",
-      "#669900",
-      "#4E7738",
-      "#36572C"
-    ),
-    oranges = c(
-      "#EABF88",
-      "#DCAA59",
-      "#CF962A",
-      "#C17729",
-      "#B55927"
-    ),
-    purples = c(
-      "#B8B5C8",
-      "#8A7798",
-      "#674875",
-      "#4F3A60",
-      "#382C4B"
-    ),
-    reds = c(
-      "#EDB1A6",
-      "#D8755E",
-      "#C83728",
-      "#A52722",
-      "#831618"
-    ),
-    election = c(
-      "#C43D49", # GOP Red
-      "#DA968E", # GOP Leading
-      "#5186B4", # Dem Blue
-      "#A2B7D3", # Dem Leading
-      "#CCB43D", # Other Yellow
-      "#EDDB95", # Other Leading
-      "#A751B4"  # Runoff
+ap.pal <- function(name, direction = 1) {
+  palette <-
+    switch(
+      name,
+      neutrals = c(
+        "#FFFFFF", # White
+        "#E7E2D8", # Light Gray
+        "#B1AAA8", # Medium Gray
+        "#8F8F8F", # Deep Gray
+        "#5D5A58"  # Heavy Gray
+      ),
+      primary = c(
+        "#146994", # Medium Blue
+        "#669900", # Medium Green
+        "#D19600", # Medium Orange
+        "#674875", # Medium Purple
+        "#C83728"  # Medium Red
+      ),
+      secondary = c(
+        "#003753", # Heavy Blue
+        "#36572C", # Heavy Green
+        "#B55927", # Heavy Orange
+        "#382C4B", # Heavy Purple
+        "#831618", # Heavy Red
+        "#B0C8D2", # Light Blue
+        "#AFC8A0", # Light Green
+        "#EABF88", # Light Orange
+        "#B8B5C8", # Light Purple
+        "#EDB1A6"  # Light Red
+      ),
+      blues = c(
+        "#B0C8D2",
+        "#6B91AF",
+        "#146994",
+        "#055072",
+        "#003753"
+      ),
+      greens = c(
+        "#AFC8A0",
+        "#89AE6C",
+        "#669900",
+        "#4E7738",
+        "#36572C"
+      ),
+      oranges = c(
+        "#EABF88",
+        "#DCAA59",
+        "#CF962A",
+        "#C17729",
+        "#B55927"
+      ),
+      purples = c(
+        "#B8B5C8",
+        "#8A7798",
+        "#674875",
+        "#4F3A60",
+        "#382C4B"
+      ),
+      reds = c(
+        "#EDB1A6",
+        "#D8755E",
+        "#C83728",
+        "#A52722",
+        "#831618"
+      ),
+      election = c(
+        "#C43D49", # GOP Red
+        "#DA968E", # GOP Leading
+        "#5186B4", # Dem Blue
+        "#A2B7D3", # Dem Leading
+        "#CCB43D", # Other Yellow
+        "#EDDB95", # Other Leading
+        "#A751B4"  # Runoff
+      )
     )
-  )
+  if (direction == -1) {
+    palette <- rev(palette)
+  }
+  palette
 }
 
 #' @export
