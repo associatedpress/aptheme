@@ -169,7 +169,12 @@ ap.pal <- function(name, direction = 1) {
 }
 
 #' @export
-scale_color_ap <- function(..., palette = "default") {
+scale_color_ap <- function(..., palette = "default", direction = 1) {
+
+  palette_function <- function(x) {
+    ap.pal(x, direction)
+  }
+
   if (palette == "default") {
     scale_color_manual(..., values = unlist(
       lapply(
@@ -181,14 +186,19 @@ scale_color_ap <- function(..., palette = "default") {
           "purples",
           "reds",
           "neutrals"),
-        ap.pal)))
+        palette_function)))
   } else {
-    scale_color_manual(..., values = ap.pal(palette))
+    scale_color_manual(..., values = palette_function(palette))
   }
 }
 
 #' @export
 scale_fill_ap <- function(..., palette = "default") {
+
+  palette_function <- function(x) {
+    ap.pal(x, direction)
+  }
+
   if (palette == "default") {
     scale_fill_manual(..., values = unlist(
       lapply(
@@ -200,8 +210,8 @@ scale_fill_ap <- function(..., palette = "default") {
           "purples",
           "reds",
           "neutrals"),
-        ap.pal)))
+        palette_function)))
   } else {
-    scale_fill_manual(..., values = ap.pal(palette))
+    scale_fill_manual(..., values = palette_function(palette))
   }
 }
