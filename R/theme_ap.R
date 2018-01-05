@@ -193,7 +193,7 @@ scale_color_ap <- function(..., palette = "default", direction = 1) {
 }
 
 #' @export
-scale_fill_ap <- function(..., palette = "default") {
+scale_fill_ap <- function(..., palette = "default", direction = 1) {
 
   palette_function <- function(x) {
     ap.pal(x, direction)
