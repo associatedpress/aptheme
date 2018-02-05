@@ -16,3 +16,9 @@ library(aptheme)
 # ggplot2
 plot + theme_ap()
 ```
+
+To bring legends back:
+
+``` r
+plot + theme_ap() + theme(legend.position = 'bottom')
+```
