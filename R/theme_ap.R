@@ -6,7 +6,7 @@
 #' http://ggplot2.tidyverse.org/reference/theme.html
 #' @import ggplot2
 
-# Notes on primitives:
+# Notes on primitives: (defaults)
 # element_text:
 #   family = font family
 #   face = font face
@@ -34,14 +34,17 @@ theme_ap <- function(size = 12, family = "GoodComp-CondBook") {
   theme(
     # Text elements
     text = element_text(size, family = family),
-    title = element_text(size = size + 4),
-    axis.text = element_text(size = size - 4),
+    plot.caption = element_text(hjust = 0, color = "#8F8F8F"),
+    axis.text = element_text(),
+    axis.text.x = element_text(margin = margin(t = .5 * size)),
+    legend.text = element_text(),
+    title = element_text(size = size),
     axis.title = element_text(size = size),
-#    legend.text = element_blank(),
-#    legend.title = element_blank(),
-    plot.caption = element_text(size = size - 2),
-#    plot.title = element_blank(),
-    plot.subtitle = element_text(size = size),
+    axis.title.x = element_text(margin = margin(t = size)),
+    axis.title.y = element_text(margin = margin(r = size)),
+    legend.title = element_blank(),
+    plot.title = element_text(size = rel(2), margin = margin(b = 2 * size)),
+    plot.subtitle = element_text(size = rel(1.5), margin = margin(t = - size, b = 2 * size)),
 #    strip.text = element_blank(),
 
     # Line elements
@@ -54,7 +57,7 @@ theme_ap <- function(size = 12, family = "GoodComp-CondBook") {
 
     # Rect elements
 #    rect = element_blank(),
-#    legend.key = element_blank(),
+    legend.key = element_blank(),
 #    legend.background = element_blank(),
 #    legend.box.background = element_blank(),
     panel.background = element_blank(), # Drawn underneath the plot
@@ -64,12 +67,11 @@ theme_ap <- function(size = 12, family = "GoodComp-CondBook") {
 
     # Other
     axis.ticks.length = unit(0, "pt"),
-
 #    legend.margin = margin(-15, 0, -15, 0, "pt"),
-#    legend.spacing = element_blank(),
-#    legend.key.size = element_blank(),
+#    legend.spacing = unit(0, 'pt'),
+    legend.key.size = unit(10, 'pt'),
 #    legend.text.align = 0, # 0: left, 1: right
-#    legend.title.align = 0,
+#    legend.title.align = 1,
     legend.position = 'none', # none, left, right, bottom, top, or two-element numeric vector
 #    legend.direction = "vertical", # horizontal, vertical
 #    legend.justification = "center", # center or two-element numeric vector
@@ -79,7 +81,7 @@ theme_ap <- function(size = 12, family = "GoodComp-CondBook") {
 #    legend.box.spacing = unit(0, "pt"),
 
     panel.spacing = unit(0, "pt"),
-    plot.margin = margin(5, 0, 0, 0, "pt"),
+    plot.margin = margin(15, 15, 15, 15, "pt"),
     strip.placement = "inside", # inside, outside
     aspect.ratio = 3/4
   )}
@@ -185,7 +187,8 @@ scale_color_ap <- function(..., palette = "default", direction = 1) {
           "oranges",
           "purples",
           "reds",
-          "neutrals"),
+          "neutrals",
+          "election"),
         palette_function)))
   } else {
     scale_color_manual(..., values = palette_function(palette))
@@ -209,7 +212,8 @@ scale_fill_ap <- function(..., palette = "default", direction = 1) {
           "oranges",
           "purples",
           "reds",
-          "neutrals"),
+          "neutrals",
+          "election"),
         palette_function)))
   } else {
     scale_fill_manual(..., values = palette_function(palette))
