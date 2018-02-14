@@ -67,7 +67,7 @@ sample_barplot <-
   theme_ap() +
   scale_fill_ap(palette = 'election') +
   labs(title = "Sample bar plot",
-       subtitle = "Mileage vs.gears",
+       subtitle = "Mileage vs. gears",
        caption = "Source: mtcars dataset",
        x = "Carb",
        y = "Combined weight")
