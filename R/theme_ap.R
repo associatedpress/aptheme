@@ -30,7 +30,7 @@
 
 
 #' @export
-theme_ap <- function(size = 12, family = "GoodComp-CondBook") {
+theme_ap <- function(size = 12, family = "GoodCompCondBook") {
   theme(
     # Text elements
     text = element_text(size, family = family),
