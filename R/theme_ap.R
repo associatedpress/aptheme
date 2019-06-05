@@ -34,25 +34,26 @@ theme_ap <- function(size = 12, family = "GoodCompCondBook") {
   theme(
     # Text elements
     text = element_text(size, family = family),
-    plot.caption = element_text(hjust = 0, color = "#8F8F8F"),
+    plot.caption = element_text(hjust = 0, color = "#808080"),
     axis.text = element_text(),
     axis.text.x = element_text(margin = margin(t = .5 * size)),
     legend.text = element_text(),
-    title = element_text(size = size),
+    title = element_text(size = size, debug=T),
     axis.title = element_text(size = size),
     axis.title.x = element_text(margin = margin(t = size)),
     axis.title.y = element_text(margin = margin(r = size)),
     legend.title = element_blank(),
-    plot.title = element_text(size = rel(2), margin = margin(b = 2 * size)),
-    plot.subtitle = element_text(size = rel(1.5), margin = margin(t = - size, b = 2 * size)),
+    plot.title = element_text(size = rel(2)),
+    plot.subtitle = element_blank(), # AP style - no subtitles
 #    strip.text = element_blank(),
 
     # Line elements
 #    line = element_blank(),
-#    axis.ticks = element_blank(),
+    axis.ticks.y = element_blank(),
 #    axis.line = element_blank(),
 #    panel.grid = element_blank(),
-    panel.grid.major = element_line(color = '#CCCCCC', linetype = 'dotted'),
+    panel.grid.major = element_line(color = '#939598', linetype = 'dotted'),
+    panel.grid.major.x = element_blank(),
     panel.grid.minor = element_blank(),
 
     # Rect elements
@@ -66,7 +67,7 @@ theme_ap <- function(size = 12, family = "GoodCompCondBook") {
 #    strip.background = element_blank(),
 
     # Other
-    axis.ticks.length = unit(0, "pt"),
+    axis.ticks.length = unit(4, "pt"),
 #    legend.margin = margin(-15, 0, -15, 0, "pt"),
 #    legend.spacing = unit(0, 'pt'),
     legend.key.size = unit(10, 'pt'),
@@ -81,9 +82,9 @@ theme_ap <- function(size = 12, family = "GoodCompCondBook") {
 #    legend.box.spacing = unit(0, "pt"),
 
     panel.spacing = unit(0, "pt"),
-    plot.margin = margin(15, 15, 15, 15, "pt"),
-    strip.placement = "inside", # inside, outside
-    aspect.ratio = 3/4
+    plot.margin = margin(0, 0, 0, 0, "pt"),
+    strip.placement = "inside"#, inside, outside
+    #aspect.ratio = 3/4
   )}
 
 
