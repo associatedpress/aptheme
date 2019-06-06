@@ -2,7 +2,7 @@ Package: aptheme
 Type: Package
 Title: AP R Themes
 Version: 0.1.2
-Author: Larry Fenn
+Authors@R: c(person("Larry", "Fenn", email = "lfenn@ap.org", role = c("aut", "cre")))
 Maintainer: Larry Fenn <lfenn@ap.org>
 Description: Visualization themes in AP style.
 License: OSI
