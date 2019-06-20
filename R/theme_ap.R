@@ -38,7 +38,7 @@ theme_ap <- function(size = 12, family = "GoodCompCondBook") {
     axis.text = element_text(),
     axis.text.x = element_text(margin = margin(t = .5 * size)),
     legend.text = element_text(),
-    title = element_text(size = size, debug=T),
+    title = element_text(size = size),
     axis.title = element_text(size = size),
     axis.title.x = element_text(margin = margin(t = size)),
     axis.title.y = element_text(margin = margin(r = size)),
