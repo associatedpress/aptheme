@@ -52,8 +52,13 @@ theme_ap <- function(size = 12, family = "GoodCompCondBook") {
     axis.ticks.y = element_blank(),
 #    axis.line = element_blank(),
 #    panel.grid = element_blank(),
+<<<<<<< HEAD
     panel.grid.major.x = element_line(color = '#939598', linetype = 'dotted'),
     panel.grid.major.y = element_blank(),
+=======
+    panel.grid.major.x = element_blank(),
+    panel.grid.major.y = element_line(color = '#939598', linetype = 'dotted'),
+>>>>>>> b9ecd0ad024809d6a13a3ba6b0550a36320156e0
     panel.grid.minor = element_blank(),
 
     # Rect elements
