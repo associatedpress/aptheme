@@ -1,7 +1,7 @@
 Package: aptheme
 Type: Package
 Title: AP R Themes
-Version: 0.1.2
+Version: 0.1.3
 Authors@R: c(person("Larry", "Fenn", email = "lfenn@ap.org", role = c("aut", "cre")))
 Maintainer: Larry Fenn <lfenn@ap.org>
 Description: Visualization themes in AP style.
@@ -9,7 +9,7 @@ License: OSI
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.0.1.9000
-Collate: 
+Collate:
     'theme_ap.R'
 Imports:
   ggplot2
