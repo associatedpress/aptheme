@@ -33,15 +33,12 @@
 theme_ap <- function(size = 12, family = "GoodCompCondBook") {
   theme(
     # Text elements
-    text = element_text(size, family = family),
+    text = element_text(family = family, size = size),
     plot.caption = element_text(hjust = 0, color = "#808080"),
-    axis.text = element_text(),
-    axis.text.x = element_text(margin = margin(t = .5 * size)),
+    axis.text = element_text(margin = c(0, 0, 0, 0)),
     legend.text = element_text(),
     title = element_text(size = size),
-    axis.title = element_text(size = size),
-    axis.title.x = element_text(margin = margin(t = size)),
-    axis.title.y = element_text(margin = margin(r = size)),
+    axis.title = element_text(size = size, margin = c(0, 0, 0, 0)),
     legend.title = element_blank(),
     plot.title = element_text(size = rel(2)),
     plot.subtitle = element_blank(), # AP style - no subtitles
@@ -94,7 +91,6 @@ ap.pal <- function(name, direction = 1) {
     switch(
       name,
       neutrals = c(
-        "#FFFFFF", # White
         "#E7E2D8", # Light Gray
         "#B1AAA8", # Medium Gray
         "#8F8F8F", # Deep Gray
