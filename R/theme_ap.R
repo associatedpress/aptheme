@@ -78,7 +78,7 @@ theme_ap <- function(size = 12, family = "GoodCompCondBook") {
 #    legend.box.spacing = unit(0, "pt"),
 
     panel.spacing = unit(0, "pt"),
-    plot.margin = margin(0, 0, 0, 0, "pt"),
+    plot.margin = margin(10, 10, 5, 5, "pt"),
     strip.placement = "inside"#, inside, outside
     #aspect.ratio = 3/4
   )}
