@@ -7,21 +7,22 @@
 #' TODO: Style the regression line object as well
 
 library(ggplot2)
-library(aptheme)
+#library(aptheme)
 
-color_names <- c("Primary", "Secondary Heavy", "Secondary Light", "Blues", "Greens", "Oranges", "Purples", "Reds", "Neutrals")
+palette_names <- c("primary", "activated", paste0("dark", 1:5), paste0("light", 1:5))
+color_names <- c("reds", "oranges", "yellow_oranges", "yellows", "yellow_greens", "greens", "blue_greens", "cyans", "blues", "violets", "purples", "pinks")
 
 swatch <-
   ggplot(
   data = data.frame(
-    x = factor(c(rep(color_names, each = 5), rep("Election", 7)), levels = c(color_names, "Election")),
-    y = rep(1, times = 52),
-    box = as.factor(1:52)
+    x = factor(c("red", rep("neutrals", 5), rep("papers", 4), rep(palette_names, each = 12), rep(color_names, each = 11), rep("election", 10)), levels = c("red", "neutrals", "papers", palette_names, color_names, "election")),
+    y = rep(1, times = 296),
+    box = as.factor(1:296)
     ),
   aes(x = x, y = y, group = x, fill = box)) +
   geom_bar(stat = 'identity') +
   theme_ap() +
-  scale_fill_ap() +
+  scale_fill_ap(palette = "testing") +
   theme(aspect.ratio = 1, axis.text.x = element_blank(), panel.grid.major = element_blank()) +
   labs(title = "AP colors", x = "", y = "", caption = "Source: AP Style Guide") +
   coord_flip()
