@@ -35,74 +35,74 @@ theme_ap <- function(size = 12, family = "AP Condensed") {
     # Text elements
     text = element_text(family = family, size = size),
     plot.caption = element_text(hjust = 0, color = "#808080"),
-    axis.text = element_text(margin = c(0, 0, 0, 0)),
+    axis.text = element_text(margin = margin(0, 0, 0, 0)),
     legend.text = element_text(),
     title = element_text(size = size),
-    axis.title = element_text(size = size, margin = c(0, 0, 0, 0)),
+    axis.title = element_text(size = size, margin = margin(0, 0, 0, 0)),
     legend.title = element_blank(),
     plot.title = element_text(size = rel(2)),
     plot.subtitle = element_blank(), # AP style - no subtitles
-#    strip.text = element_blank(),
+    #    strip.text = element_blank(),
 
     # Line elements
-#    line = element_blank(),
+    #    line = element_blank(),
     axis.ticks.y = element_blank(),
-#    axis.line = element_blank(),
-#    panel.grid = element_blank(),
-    panel.grid.major = element_line(color = '#939598', linetype = 'dotted'),
+    #    axis.line = element_blank(),
+    #    panel.grid = element_blank(),
+    panel.grid.major = element_line(color = "#939598", linetype = "dotted"),
     panel.grid.minor = element_blank(),
 
     # Rect elements
-#    rect = element_blank(),
+    #    rect = element_blank(),
     legend.key = element_blank(),
-#    legend.background = element_blank(),
-#    legend.box.background = element_blank(),
+    #    legend.background = element_blank(),
+    #    legend.box.background = element_blank(),
     panel.background = element_blank(), # Drawn underneath the plot
-#    panel.border = element_blank(), # Drawn on top of plot, covering tick marks and grid lines (fill = NA)
-#    plot.background = element_blank(),
-#    strip.background = element_blank(),
+    #    panel.border = element_blank(), # Drawn on top of plot, covering tick marks and grid lines (fill = NA)
+    #    plot.background = element_blank(),
+    #    strip.background = element_blank(),
 
     # Other
     axis.ticks.length = unit(4, "pt"),
-#    legend.margin = margin(-15, 0, -15, 0, "pt"),
-#    legend.spacing = unit(0, 'pt'),
-    legend.key.size = unit(10, 'pt'),
-#    legend.text.align = 0, # 0: left, 1: right
-#    legend.title.align = 1,
-    legend.position = 'none', # none, left, right, bottom, top, or two-element numeric vector
-#    legend.direction = "vertical", # horizontal, vertical
-#    legend.justification = "center", # center or two-element numeric vector
-#    legend.box = "horizontal", # horizontal, vertical
-#    legend.box.just = "left", # top, bottom, left, right
-#    legend.box.margin = margin(0, 0, 0, 0, "pt"), # specified
-#    legend.box.spacing = unit(0, "pt"),
+    #    legend.margin = margin(-15, 0, -15, 0, "pt"),
+    #    legend.spacing = unit(0, 'pt'),
+    legend.key.size = unit(10, "pt"),
+    #    legend.text.align = 0, # 0: left, 1: right
+    #    legend.title.align = 1,
+    legend.position = "none", # none, left, right, bottom, top, or two-element numeric vector
+    #    legend.direction = "vertical", # horizontal, vertical
+    #    legend.justification = "center", # center or two-element numeric vector
+    #    legend.box = "horizontal", # horizontal, vertical
+    #    legend.box.just = "left", # top, bottom, left, right
+    #    legend.box.margin = margin(0, 0, 0, 0, "pt"), # specified
+    #    legend.box.spacing = unit(0, "pt"),
 
     panel.spacing = unit(0, "pt"),
     plot.margin = margin(10, 10, 5, 5, "pt"),
-    strip.placement = "inside"#, inside, outside
-    #aspect.ratio = 3/4
-  )}
+    strip.placement = "inside" # , inside, outside
+    # aspect.ratio = 3/4
+  )
+}
 
 
 # Color data object
 # This contains the color definitions specified in the style guide
 ap.pal <- function(name, direction = 1) {
   palette <-
-    switch(
-      name,
+    switch(name,
       red = "#FF1818",
       neutrals = c(
         "#000000", # Black
         "#5F5F5F", # Dark Gray
         "#A5A5A5", # Gray
         "#DCDCDC", # Light Gray
-        "#F2F2F2"  # Even Lighter Gray
+        "#F2F2F2" # Even Lighter Gray
       ),
       papers = c(
         "#5D5A58", # Heavy Gray
         "#8F8F8F", # Deep Gray
         "#B1AAA8", # Medium Gray
-        "#E7E2D8"  # Light Gray
+        "#E7E2D8" # Light Gray
       ),
       primary = c(
         "#00BAFC", # Primary Cyan
@@ -116,7 +116,7 @@ ap.pal <- function(name, direction = 1) {
         "#EB0EA5", # Primary Pink
         "#622EDC", # Primary Violet
         "#23E8C8", # Primary Blue Green
-        "#FE761A"  # Primary Orange
+        "#FE761A" # Primary Orange
       ),
       activated = c(
         "#57DAFE", # Activated Cyan
@@ -130,7 +130,7 @@ ap.pal <- function(name, direction = 1) {
         "#FF54BC", # Activated Pink
         "#7632FF", # Activated Violet
         "#19FFD7", # Activated Blue Green
-        "#FF8C02"  # Activated Orange
+        "#FF8C02" # Activated Orange
       ),
       dark1 = c(
         "#0081E1", # Dark 1 Cyan
@@ -144,7 +144,7 @@ ap.pal <- function(name, direction = 1) {
         "#C40FA1", # Dark 1 Pink
         "#4C28C2", # Dark 1 Violet
         "#16A5A3", # Dark 1 Blue Green
-        "#E06016"  # Dark 1 Orange
+        "#E06016" # Dark 1 Orange
       ),
       dark2 = c(
         "#005EC7", # Dark 2 Cyan
@@ -158,7 +158,7 @@ ap.pal <- function(name, direction = 1) {
         "#9C0087", # Dark 2 Pink
         "#3E10B4", # Dark 2 Violet
         "#0C7B85", # Dark 2 Blue Green
-        "#B64A00"  # Dark 2 Orange
+        "#B64A00" # Dark 2 Orange
       ),
       dark3 = c(
         "#0042A9", # Dark 3 Cyan
@@ -172,7 +172,7 @@ ap.pal <- function(name, direction = 1) {
         "#7A086E", # Dark 3 Pink
         "#2F1498", # Dark 3 Violet
         "#005E75", # Dark 3 Blue Green
-        "#A0400C"  # Dark 3 Orange
+        "#A0400C" # Dark 3 Orange
       ),
       dark4 = c(
         "#00327C", # Dark 4 Cyan
@@ -186,7 +186,7 @@ ap.pal <- function(name, direction = 1) {
         "#620054", # Dark 4 Pink
         "#280C88", # Dark 4 Violet
         "#004660", # Dark 4 Blue Green
-        "#843514"  # Dark 4 Orange
+        "#843514" # Dark 4 Orange
       ),
       dark5 = c(
         "#002860", # Dark 5 Cyan
@@ -200,7 +200,7 @@ ap.pal <- function(name, direction = 1) {
         "#50004C", # Dark 5 Pink
         "#24086E", # Dark 5 Violet
         "#00324B", # Dark 5 Blue Green
-        "#60300F"  # Dark 5 Orange
+        "#60300F" # Dark 5 Orange
       ),
       light1 = c(
         "#84EBFE", # Light 1 Cyan
@@ -214,7 +214,7 @@ ap.pal <- function(name, direction = 1) {
         "#FF78DE", # Light 1 Pink
         "#8C6CFF", # Light 1 Violet
         "#8EFFD8", # Light 1 Blue Green
-        "#FFAC2C"  # Light 1 Orange
+        "#FFAC2C" # Light 1 Orange
       ),
       light2 = c(
         "#BDF8FF", # Light 2 Cyan
@@ -228,7 +228,7 @@ ap.pal <- function(name, direction = 1) {
         "#FFA0F5", # Light 2 Pink
         "#B1A0FF", # Light 2 Violet
         "#BCFFDE", # Light 2 Blue Green
-        "#FFC074"  # Light 2 Orange
+        "#FFC074" # Light 2 Orange
       ),
       light3 = c(
         "#D4FFFF", # Light 3 Cyan
@@ -242,7 +242,7 @@ ap.pal <- function(name, direction = 1) {
         "#FFCAFF", # Light 3 Pink
         "#DDD8FF", # Light 3 Violet
         "#D8FFEC", # Light 3 Blue Green
-        "#FFEAAF"  # Light 3 Orange
+        "#FFEAAF" # Light 3 Orange
       ),
       light4 = c(
         "#E4FFFF", # Light 4 Cyan
@@ -256,7 +256,7 @@ ap.pal <- function(name, direction = 1) {
         "#FFEEFE", # Light 4 Pink
         "#EFEFFF", # Light 4 Violet
         "#E8FFF3", # Light 4 Blue Green
-        "#FFF4D4"  # Light 4 Orange
+        "#FFF4D4" # Light 4 Orange
       ),
       light5 = c(
         "#F0FDFD", # Light 5 Cyan
@@ -270,7 +270,7 @@ ap.pal <- function(name, direction = 1) {
         "#FDF2FF", # Light 5 Pink
         "#F5F5FF", # Light 5 Violet
         "#F4FDFA", # Light 5 Blue Green
-        "#FFFAED"  # Light 5 Orange
+        "#FFFAED" # Light 5 Orange
       ),
       reds = c(
         "#640028",
@@ -438,7 +438,7 @@ ap.pal <- function(name, direction = 1) {
         "#B68C22", # Other Flip
         "#F3BB2D", # Other Yellow
         "#EDDB95", # Other Leading
-        "#9D42BE"  # Runoff
+        "#9D42BE" # Runoff
       )
     )
   if (direction == -1) {
@@ -449,7 +449,6 @@ ap.pal <- function(name, direction = 1) {
 
 #' @export
 scale_color_ap <- function(..., palette = "default", direction = 1) {
-
   palette_function <- function(x) {
     ap.pal(x, direction)
   }
@@ -457,15 +456,20 @@ scale_color_ap <- function(..., palette = "default", direction = 1) {
   if (palette == "default") {
     scale_color_manual(..., values = unlist(
       lapply(
-        c("dark1",
+        c(
+          "dark1",
           "dark3",
           "primary",
-          "dark2"),
-        palette_function)))
+          "dark2"
+        ),
+        palette_function
+      )
+    ))
   } else if (palette == "testing") {
     scale_color_manual(..., values = unlist(
       lapply(
-        c("red",
+        c(
+          "red",
           "neutrals",
           "papers",
           "primary",
@@ -492,8 +496,11 @@ scale_color_ap <- function(..., palette = "default", direction = 1) {
           "violets",
           "purples",
           "pinks",
-          "election"),
-        palette_function)))
+          "election"
+        ),
+        palette_function
+      )
+    ))
   } else {
     scale_color_manual(..., values = palette_function(palette))
   }
@@ -501,7 +508,6 @@ scale_color_ap <- function(..., palette = "default", direction = 1) {
 
 #' @export
 scale_fill_ap <- function(..., palette = "default", direction = 1) {
-
   palette_function <- function(x) {
     ap.pal(x, direction)
   }
@@ -509,15 +515,20 @@ scale_fill_ap <- function(..., palette = "default", direction = 1) {
   if (palette == "default") {
     scale_fill_manual(..., values = unlist(
       lapply(
-        c("dark1",
+        c(
+          "dark1",
           "dark3",
           "primary",
-          "dark2"),
-          palette_function)))
+          "dark2"
+        ),
+        palette_function
+      )
+    ))
   } else if (palette == "testing") {
     scale_fill_manual(..., values = unlist(
       lapply(
-        c("red",
+        c(
+          "red",
           "neutrals",
           "papers",
           "primary",
@@ -544,10 +555,12 @@ scale_fill_ap <- function(..., palette = "default", direction = 1) {
           "violets",
           "purples",
           "pinks",
-          "election"),
-        palette_function)))
+          "election"
+        ),
+        palette_function
+      )
+    ))
   } else {
     scale_fill_manual(..., values = palette_function(palette))
   }
 }
-
